@@ -1,10 +1,17 @@
 
 package Views;
 
-public class FrmLogin extends javax.swing.JFrame {
+import controllers.LoginControllers;
+import models.Usuarios;
+import models.UsuariosDAO;
 
+public class FrmLogin extends javax.swing.JFrame {
+    Usuarios us = new Usuarios();
+    UsuariosDAO usDao = new UsuariosDAO();
+            
     public FrmLogin() {
         initComponents();
+        LoginControllers users = new LoginControllers(us, usDao, this);
     }
 
     /**

@@ -22,7 +22,7 @@ public class UsuariosDAO {
             ps = con.prepareStatement(sql);
             ps.setString(1, usuario);
             ps.setString(2, clave);
-            rs = ps. executeQuery();
+            rs = ps.executeQuery();
             
             if(rs.next()){
                 us.setId(rs.getInt("id"));
