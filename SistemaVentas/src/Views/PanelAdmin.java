@@ -124,8 +124,30 @@ public class PanelAdmin extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         TableUser = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        btnNuevoCategoria = new javax.swing.JButton();
+        btnRegistrarCategoria = new javax.swing.JButton();
+        btnModificarCategoria = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        txtNombreCategoria = new javax.swing.JTextField();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        TableCategoria = new javax.swing.JTable();
+        PaginadorCategoria = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
+        jPanel21 = new javax.swing.JPanel();
+        btnNuevoMedida = new javax.swing.JButton();
+        btnRegistrarMedida = new javax.swing.JButton();
+        btnModificarMedida = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
+        txtNombreMedida = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txtNombreCortoMedida = new javax.swing.JTextField();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        TableMedida = new javax.swing.JTable();
+        PaginadorMedida = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
@@ -396,7 +418,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(140, 132, 152));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder("Nuevo Producto"));
+        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
 
         btnNuevoProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnNuevoProducto.setText("Nuevo");
@@ -502,7 +524,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbCategoriaProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -522,6 +544,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TableProductos);
         if (TableProductos.getColumnModel().getColumnCount() > 0) {
+            TableProductos.getColumnModel().getColumn(1).setHeaderValue("Usuario");
+            TableProductos.getColumnModel().getColumn(3).setHeaderValue("Rol");
             TableProductos.getColumnModel().getColumn(4).setHeaderValue("Medida");
         }
 
@@ -545,7 +569,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(140, 132, 152));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder("Nuevo Cliente"));
+        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
 
         btnNuevoCliente.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnNuevoCliente.setText("Nuevo");
@@ -609,7 +633,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -628,6 +652,10 @@ public class PanelAdmin extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(TableClientes);
+        if (TableClientes.getColumnModel().getColumnCount() > 0) {
+            TableClientes.getColumnModel().getColumn(1).setHeaderValue("Usuario");
+            TableClientes.getColumnModel().getColumn(3).setHeaderValue("Rol");
+        }
 
         jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
 
@@ -649,7 +677,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(140, 132, 152));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder("Nuevo Proveedor"));
+        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Proveedor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
 
         btnNuevoProveedor.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnNuevoProveedor.setText("Nuevo");
@@ -724,7 +752,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -743,6 +771,10 @@ public class PanelAdmin extends javax.swing.JFrame {
             }
         ));
         jScrollPane5.setViewportView(TableProveedor);
+        if (TableProveedor.getColumnModel().getColumnCount() > 0) {
+            TableProveedor.getColumnModel().getColumn(1).setHeaderValue("Usuario");
+            TableProveedor.getColumnModel().getColumn(3).setHeaderValue("Rol");
+        }
 
         jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
 
@@ -777,7 +809,7 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jPanel7.add(PaginadorUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 770, 50));
 
-        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder("Nuevo Usuario"));
+        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
 
         btnNuevoUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btnNuevoUser.setText("Nuevo");
@@ -866,7 +898,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbRolUser, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -885,49 +917,205 @@ public class PanelAdmin extends javax.swing.JFrame {
             }
         ));
         jScrollPane7.setViewportView(TableUser);
+        if (TableUser.getColumnModel().getColumnCount() > 0) {
+            TableUser.getColumnModel().getColumn(1).setHeaderValue("Usuario");
+            TableUser.getColumnModel().getColumn(3).setHeaderValue("Rol");
+            TableUser.getColumnModel().getColumn(4).setHeaderValue("Caja");
+        }
 
         jPanel7.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
 
         jTabbedPane1.addTab("tab4", jPanel7);
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1098, Short.MAX_VALUE)
+        jPanel8.setBackground(new java.awt.Color(140, 132, 152));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel20.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nueva Categoría", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+
+        btnNuevoCategoria.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNuevoCategoria.setText("Nuevo");
+
+        btnRegistrarCategoria.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegistrarCategoria.setText("Registrar");
+
+        btnModificarCategoria.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarCategoria.setText("Modificar");
+
+        jLabel24.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel24.setText("Nombre");
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addComponent(btnNuevoCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnRegistrarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnModificarCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 338, Short.MAX_VALUE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNuevoCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistrarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificarCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
         );
+
+        jPanel8.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 280, 470));
+
+        TableCategoria.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nombre", "Estado"
+            }
+        ));
+        jScrollPane8.setViewportView(TableCategoria);
+
+        jPanel8.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
+
+        javax.swing.GroupLayout PaginadorCategoriaLayout = new javax.swing.GroupLayout(PaginadorCategoria);
+        PaginadorCategoria.setLayout(PaginadorCategoriaLayout);
+        PaginadorCategoriaLayout.setHorizontalGroup(
+            PaginadorCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 770, Short.MAX_VALUE)
+        );
+        PaginadorCategoriaLayout.setVerticalGroup(
+            PaginadorCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jPanel8.add(PaginadorCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 770, 50));
 
         jTabbedPane1.addTab("tab5", jPanel8);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1098, Short.MAX_VALUE)
+        jPanel9.setBackground(new java.awt.Color(140, 132, 152));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel21.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nueva Medida", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+
+        btnNuevoMedida.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNuevoMedida.setText("Nuevo");
+
+        btnRegistrarMedida.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegistrarMedida.setText("Registrar");
+
+        btnModificarMedida.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarMedida.setText("Modificar");
+
+        jLabel25.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel25.setText("Nombre");
+
+        jLabel26.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel26.setText("Nombre Corto");
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addComponent(btnNuevoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnRegistrarMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnModificarMedida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNombreMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNombreCortoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreCortoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNuevoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistrarMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificarMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
         );
+
+        jPanel9.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 280, 470));
+
+        TableMedida.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nombre", "Nombre Corto", "Estado"
+            }
+        ));
+        jScrollPane9.setViewportView(TableMedida);
+
+        jPanel9.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
+
+        javax.swing.GroupLayout PaginadorMedidaLayout = new javax.swing.GroupLayout(PaginadorMedida);
+        PaginadorMedida.setLayout(PaginadorMedidaLayout);
+        PaginadorMedidaLayout.setHorizontalGroup(
+            PaginadorMedidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 770, Short.MAX_VALUE)
+        );
+        PaginadorMedidaLayout.setVerticalGroup(
+            PaginadorMedidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jPanel9.add(PaginadorMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 770, 50));
 
         jTabbedPane1.addTab("tab6", jPanel9);
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1098, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
-        );
+        jPanel10.setBackground(new java.awt.Color(140, 132, 152));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Descripción", "Cantidad", "Precio", "Total"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable1);
+
+        jPanel10.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 1080, 410));
 
         jTabbedPane1.addTab("tab7", jPanel10);
+
+        jPanel11.setBackground(new java.awt.Color(140, 132, 152));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -942,6 +1130,8 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab8", jPanel11);
 
+        jPanel12.setBackground(new java.awt.Color(140, 132, 152));
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -955,6 +1145,8 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab9", jPanel12);
 
+        jPanel13.setBackground(new java.awt.Color(140, 132, 152));
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
@@ -967,6 +1159,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("tab10", jPanel13);
+
+        jPanel14.setBackground(new java.awt.Color(140, 132, 152));
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -1040,23 +1234,33 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel JPanelProductos;
     private javax.swing.JPanel JPanelProveedor;
     private javax.swing.JPanel JPanelUsuarios;
+    private javax.swing.JPanel PaginadorCategoria;
     private javax.swing.JPanel PaginadorCliente;
+    private javax.swing.JPanel PaginadorMedida;
     private javax.swing.JPanel PaginadorProducto;
     private javax.swing.JPanel PaginadorProveedor;
     private javax.swing.JPanel PaginadorUser;
+    private javax.swing.JTable TableCategoria;
     private javax.swing.JTable TableClientes;
+    private javax.swing.JTable TableMedida;
     private javax.swing.JTable TableProductos;
     private javax.swing.JTable TableProveedor;
     private javax.swing.JTable TableUser;
+    private javax.swing.JButton btnModificarCategoria;
     private javax.swing.JButton btnModificarCliente;
+    private javax.swing.JButton btnModificarMedida;
     private javax.swing.JButton btnModificarProducto;
     private javax.swing.JButton btnModificarProveedor;
     private javax.swing.JButton btnModificarUser;
+    private javax.swing.JButton btnNuevoCategoria;
     private javax.swing.JButton btnNuevoCliente;
+    private javax.swing.JButton btnNuevoMedida;
     private javax.swing.JButton btnNuevoProducto;
     private javax.swing.JButton btnNuevoProveedor;
     private javax.swing.JButton btnNuevoUser;
+    private javax.swing.JButton btnRegistrarCategoria;
     private javax.swing.JButton btnRegistrarCliente;
+    private javax.swing.JButton btnRegistrarMedida;
     private javax.swing.JButton btnRegistrarProducto;
     private javax.swing.JButton btnRegistrarProveedor;
     private javax.swing.JButton btnRegistrarUser;
@@ -1079,6 +1283,9 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1097,6 +1304,8 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1109,15 +1318,22 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtBuscarProducto;
     private javax.swing.JPasswordField txtClaveUser;
     private javax.swing.JTextField txtCodigoProducto;
     private javax.swing.JTextField txtDescripcionProducto;
     private javax.swing.JTextPane txtDireccionCliente;
     private javax.swing.JTextPane txtDireccionProveedor;
+    private javax.swing.JTextField txtNombreCategoria;
     private javax.swing.JTextField txtNombreCliente;
+    private javax.swing.JTextField txtNombreCortoMedida;
+    private javax.swing.JTextField txtNombreMedida;
     private javax.swing.JTextField txtNombreProveedor;
     private javax.swing.JTextField txtNombreUser;
     private javax.swing.JTextField txtPrecioCompraProducto;
