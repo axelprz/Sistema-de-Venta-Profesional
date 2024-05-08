@@ -37,4 +37,22 @@ public class UsuariosDAO {
         }
         return us;
     }
+
+    public boolean registrar(Usuarios us){
+        String sql = "INSERT INTO usuarios (usuario, nombre, clave, caja, rol) VALUES (?,?,?,?,?)";
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, us.getUsuario());
+            ps.setString(2, us.getNombre());
+            ps.setString(3, us.getClave());
+            ps.setString(4, us.getCaja());
+            ps.setString(5, us.getRol());
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+        }
+    }
 }

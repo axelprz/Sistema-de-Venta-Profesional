@@ -5,19 +5,22 @@
 package Views;
 
 import controllers.ConfigControllers;
+import controllers.UsuariosController;
+import models.Usuarios;
+import models.UsuariosDAO;
 
 /**
  *
  * @author axelp
  */
 public class PanelAdmin extends javax.swing.JFrame {
-
-    /**
-     * Creates new form PanelAdmin
-     */
+    Usuarios us = new Usuarios();
+    UsuariosDAO usDao = new UsuariosDAO();
+    
     public PanelAdmin() {
         initComponents();
         ConfigControllers config = new ConfigControllers(this);
+        UsuariosController users = new UsuariosController(us, usDao, this);
     }
 
     /**
@@ -771,6 +774,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel16.setText("Nombre");
         jPanel19.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 91, 125, 35));
+
+        txtNombreUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jPanel19.add(txtNombreUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 92, 125, 35));
 
         jLabel17.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -784,15 +789,23 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel19.setText("Usuario");
         jPanel19.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 37, 125, 35));
+
+        txtUsuarioUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jPanel19.add(txtUsuarioUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 38, 125, 35));
 
         jLabel20.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel20.setText("Rol");
         jPanel19.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 252, 125, 35));
 
+        cbCajaUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cbCajaUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General" }));
         jPanel19.add(cbCajaUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 199, 125, 35));
 
+        cbRolUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        cbRolUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador" }));
         jPanel19.add(cbRolUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 253, 125, 35));
+
+        txtClaveUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jPanel19.add(txtClaveUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 145, 125, 35));
 
         jPanel7.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 280, 510));
@@ -1359,25 +1372,25 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnModificarMedida;
     private javax.swing.JButton btnModificarProducto;
     private javax.swing.JButton btnModificarProveedor;
-    private javax.swing.JButton btnModificarUser;
+    public javax.swing.JButton btnModificarUser;
     private javax.swing.JButton btnNuevoCategoria;
     private javax.swing.JButton btnNuevoCliente;
     private javax.swing.JButton btnNuevoMedida;
     private javax.swing.JButton btnNuevoProducto;
     private javax.swing.JButton btnNuevoProveedor;
-    private javax.swing.JButton btnNuevoUser;
+    public javax.swing.JButton btnNuevoUser;
     private javax.swing.JButton btnRegistrarCategoria;
     private javax.swing.JButton btnRegistrarCliente;
     private javax.swing.JButton btnRegistrarMedida;
     private javax.swing.JButton btnRegistrarProducto;
     private javax.swing.JButton btnRegistrarProveedor;
-    private javax.swing.JButton btnRegistrarUser;
+    public javax.swing.JButton btnRegistrarUser;
     private javax.swing.JButton btnUsers;
-    private javax.swing.JComboBox<String> cbCajaUser;
+    public javax.swing.JComboBox<String> cbCajaUser;
     private javax.swing.JComboBox<String> cbCategoriaProducto;
     private javax.swing.JComboBox<String> cbMedidaProducto;
     private javax.swing.JComboBox<String> cbProveedorProducto;
-    private javax.swing.JComboBox<String> cbRolUser;
+    public javax.swing.JComboBox<String> cbRolUser;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -1472,7 +1485,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtBuscarProducto;
     private javax.swing.JTextField txtCantidadNC;
     private javax.swing.JTextField txtCantidadNV;
-    private javax.swing.JPasswordField txtClaveUser;
+    public javax.swing.JPasswordField txtClaveUser;
     private javax.swing.JTextField txtCodigoNC;
     private javax.swing.JTextField txtCodigoNV;
     private javax.swing.JTextField txtCodigoProducto;
@@ -1487,7 +1500,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreEmpresa;
     private javax.swing.JTextField txtNombreMedida;
     private javax.swing.JTextField txtNombreProveedor;
-    private javax.swing.JTextField txtNombreUser;
+    public javax.swing.JTextField txtNombreUser;
     private javax.swing.JTextField txtPrecioCompraProducto;
     private javax.swing.JTextField txtPrecioNC;
     private javax.swing.JTextField txtPrecioNV;
@@ -1502,6 +1515,6 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelefonoProveedor;
     private javax.swing.JTextField txtTotalNC;
     private javax.swing.JTextField txtTotalNV;
-    private javax.swing.JTextField txtUsuarioUser;
+    public javax.swing.JTextField txtUsuarioUser;
     // End of variables declaration//GEN-END:variables
 }
