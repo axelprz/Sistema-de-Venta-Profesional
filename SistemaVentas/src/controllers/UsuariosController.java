@@ -25,6 +25,9 @@ public class UsuariosController implements ActionListener, MouseListener{
         this.usDao = usDao;
         this.views = views;
         this.views.btnRegistrarUser.addActionListener(this);
+        this.views.btnModificarUser.addActionListener(this);
+        this.views.jMenuEliminarUser.addActionListener(this);
+        this.views.jMenuReingresarUser.addActionListener(this);
         this.views.TableUser.addMouseListener(this);
         listarUsuarios();
     }
@@ -45,9 +48,55 @@ public class UsuariosController implements ActionListener, MouseListener{
                 us.setCaja(views.cbCajaUser.getSelectedItem().toString());
                 us.setRol(views.cbRolUser.getSelectedItem().toString());
                 if(usDao.registrar(us)){
+                    limpiarTable();
+                    listarUsuarios();
                     JOptionPane.showMessageDialog(null, "Usuario registrado con éxito");
                 }else{
                     JOptionPane.showMessageDialog(null, "Error al registrar el usuario");
+                }
+            }
+        }else if(e.getSource() == views.btnModificarUser){
+            if(views.txtUsuarioUser.getText().equals("") 
+                    || views.txtNombreUser.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios");
+            }else{
+                us.setUsuario(views.txtUsuarioUser.getText());
+                us.setNombre(views.txtNombreUser.getText());
+                us.setCaja(views.cbCajaUser.getSelectedItem().toString());
+                us.setRol(views.cbRolUser.getSelectedItem().toString());
+                us.setId(Integer.parseInt(views.txtIdUser.getText()));
+                if(usDao.modificar(us)){
+                    limpiarTable();
+                    listarUsuarios();
+                    JOptionPane.showMessageDialog(null, "Usuario modificado con éxito");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Error al modificar el usuario");
+                }
+            }
+        }else if(e.getSource() == views.jMenuEliminarUser){
+            if(views.txtIdUser.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
+            }else{
+                int id = Integer.parseInt(views.txtIdUser.getText());
+                if(usDao.accion("Inactivo", id)){
+                    limpiarTable();
+                    listarUsuarios();
+                    JOptionPane.showMessageDialog(null, "Usuario eliminado");
+                }else{
+                   JOptionPane.showMessageDialog(null, "Error al eliminar usuario"); 
+                }
+            }
+        }else if(e.getSource() == views.jMenuReingresarUser){
+            if(views.txtIdUser.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Seleccione una fila para reingresar");
+            }else{
+                int id = Integer.parseInt(views.txtIdUser.getText());
+                if(usDao.accion("Activo", id)){
+                    limpiarTable();
+                    listarUsuarios();
+                    JOptionPane.showMessageDialog(null, "Usuario reingresado");
+                }else{
+                   JOptionPane.showMessageDialog(null, "Error al reingresar usuario"); 
                 }
             }
         }
@@ -66,6 +115,13 @@ public class UsuariosController implements ActionListener, MouseListener{
             modelo.addRow(ob);
         }
         views.TableUser.setModel(modelo);
+    }
+    
+    public void limpiarTable(){
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i -= 1;
+        }
     }
 
     @Override

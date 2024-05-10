@@ -1572,8 +1572,8 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenuItem jMenuEliminarUser;
-    private javax.swing.JMenuItem jMenuReingresarUser;
+    public javax.swing.JMenuItem jMenuEliminarUser;
+    public javax.swing.JMenuItem jMenuReingresarUser;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
