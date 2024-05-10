@@ -32,6 +32,9 @@ public class PanelAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupUsuarios = new javax.swing.JPopupMenu();
+        jMenuEliminarUser = new javax.swing.JMenuItem();
+        jMenuReingresarUser = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         JPanelNuevaVenta = new javax.swing.JPanel();
         JLabelNuevaVenta = new javax.swing.JLabel();
@@ -52,7 +55,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         JPanelUsuarios = new javax.swing.JPanel();
         JLabelUsuarios = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         txtBuscarProducto = new javax.swing.JTextField();
         btnUsers = new javax.swing.JButton();
@@ -60,9 +63,6 @@ public class PanelAdmin extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
-        btnNuevoProducto = new javax.swing.JButton();
-        btnRegistrarProducto = new javax.swing.JButton();
-        btnModificarProducto = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtCodigoProducto = new javax.swing.JTextField();
         txtDescripcionProducto = new javax.swing.JTextField();
@@ -77,6 +77,9 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         cbCategoriaProducto = new javax.swing.JComboBox<>();
+        btnNuevoProducto = new javax.swing.JButton();
+        btnModificarProducto = new javax.swing.JButton();
+        btnRegistrarProducto = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableProductos = new javax.swing.JTable();
         PaginadorProducto = new javax.swing.JPanel();
@@ -128,6 +131,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         cbCajaUser = new javax.swing.JComboBox<>();
         cbRolUser = new javax.swing.JComboBox<>();
         txtClaveUser = new javax.swing.JPasswordField();
+        txtIdUser = new javax.swing.JTextField();
         jScrollPane7 = new javax.swing.JScrollPane();
         TableUser = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
@@ -199,6 +203,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jScrollPane14 = new javax.swing.JScrollPane();
         txtMensajeEmpresa = new javax.swing.JTextPane();
+        jLabel1 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
@@ -222,6 +227,14 @@ public class PanelAdmin extends javax.swing.JFrame {
         JLabelTotalPagar1 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
+
+        jMenuEliminarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+        jMenuEliminarUser.setText("Eliminar");
+        jPopupUsuarios.add(jMenuEliminarUser);
+
+        jMenuReingresarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/exchange.png"))); // NOI18N
+        jMenuReingresarUser.setText("Reingresar");
+        jPopupUsuarios.add(jMenuReingresarUser);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -486,19 +499,24 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(195, 60, 68));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Logo.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 80));
+        jLabel49.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Logo.png"))); // NOI18N
+        jPanel2.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 80));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 100));
 
         jPanel3.setBackground(new java.awt.Color(172, 60, 60));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtBuscarProducto.setBackground(new java.awt.Color(44, 44, 44));
+        txtBuscarProducto.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 34, 240, 35));
 
+        btnUsers.setBackground(new java.awt.Color(44, 44, 44));
         btnUsers.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnUsers.setForeground(new java.awt.Color(255, 255, 255));
         btnUsers.setText("Users");
         jPanel3.add(btnUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, 120, 40));
 
@@ -507,45 +525,42 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1100, 100));
 
+        jTabbedPane1.setBackground(new java.awt.Color(44, 44, 44));
+        jTabbedPane1.setForeground(java.awt.Color.white);
+
         jPanel4.setBackground(new java.awt.Color(140, 132, 152));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+        jPanel15.setBackground(new java.awt.Color(44, 44, 44));
+        jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Producto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnNuevoProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btnNuevoProducto.setText("Nuevo");
-        jPanel15.add(btnNuevoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 120, 40));
-
-        btnRegistrarProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btnRegistrarProducto.setText("Registrar");
-        jPanel15.add(btnRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 120, 40));
-
-        btnModificarProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btnModificarProducto.setText("Modificar");
-        jPanel15.add(btnModificarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, 40));
-
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("Código");
         jPanel15.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 40, 125, 35));
         jPanel15.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 41, 125, 35));
         jPanel15.add(txtDescripcionProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 95, 125, 35));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setText("Descripción");
         jPanel15.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 94, 125, 35));
         jPanel15.add(txtPrecioCompraProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 149, 125, 35));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel4.setForeground(java.awt.Color.white);
         jLabel4.setText("Precio Compra");
         jPanel15.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 148, 125, 35));
         jPanel15.add(txtPrecioVentaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 203, 125, 35));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel5.setForeground(java.awt.Color.white);
         jLabel5.setText("Precio Venta");
         jPanel15.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 202, 125, 35));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel6.setForeground(java.awt.Color.white);
         jLabel6.setText("Proveedor");
         jPanel15.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 256, 125, 35));
 
@@ -554,17 +569,38 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel15.add(cbMedidaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 310, 125, 35));
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel7.setForeground(java.awt.Color.white);
         jLabel7.setText("Medida");
         jPanel15.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 309, 125, 35));
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel8.setForeground(java.awt.Color.white);
         jLabel8.setText("Categoría");
         jPanel15.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 359, 125, 35));
 
         jPanel15.add(cbCategoriaProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 360, 125, 35));
 
+        btnNuevoProducto.setBackground(new java.awt.Color(44, 44, 44));
+        btnNuevoProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNuevoProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btnNuevoProducto.setText("Nuevo");
+        jPanel15.add(btnNuevoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 120, 40));
+
+        btnModificarProducto.setBackground(new java.awt.Color(44, 44, 44));
+        btnModificarProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificarProducto.setText("Modificar");
+        jPanel15.add(btnModificarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, 40));
+
+        btnRegistrarProducto.setBackground(new java.awt.Color(44, 44, 44));
+        btnRegistrarProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegistrarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarProducto.setText("Registrar");
+        jPanel15.add(btnRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 120, 40));
+
         jPanel4.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 280, 510));
 
+        TableProductos.setBackground(new java.awt.Color(44, 44, 44));
         TableProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -573,6 +609,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 "ID", "Producto", "Precio", "Cantidad", "Medida", "Estado"
             }
         ));
+        TableProductos.setSelectionForeground(new java.awt.Color(44, 44, 44));
         jScrollPane1.setViewportView(TableProductos);
         if (TableProductos.getColumnModel().getColumnCount() > 0) {
             TableProductos.getColumnModel().getColumn(1).setHeaderValue("Usuario");
@@ -581,6 +618,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         }
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
+
+        PaginadorProducto.setBackground(new java.awt.Color(44, 44, 44));
 
         javax.swing.GroupLayout PaginadorProductoLayout = new javax.swing.GroupLayout(PaginadorProducto);
         PaginadorProducto.setLayout(PaginadorProductoLayout);
@@ -600,32 +639,42 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(140, 132, 152));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+        jPanel17.setBackground(new java.awt.Color(44, 44, 44));
+        jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnNuevoCliente.setBackground(new java.awt.Color(44, 44, 44));
         btnNuevoCliente.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNuevoCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevoCliente.setText("Nuevo");
         jPanel17.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 120, 40));
 
+        btnRegistrarCliente.setBackground(new java.awt.Color(44, 44, 44));
         btnRegistrarCliente.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegistrarCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarCliente.setText("Registrar");
         jPanel17.add(btnRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 120, 40));
 
+        btnModificarCliente.setBackground(new java.awt.Color(44, 44, 44));
         btnModificarCliente.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnModificarCliente.setText("Modificar");
         jPanel17.add(btnModificarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, 40));
 
         jLabel9.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre");
         jPanel17.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 40, 125, 35));
         jPanel17.add(txtNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 41, 125, 35));
         jPanel17.add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 95, 125, 35));
 
         jLabel10.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Teléfono");
         jPanel17.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 94, 125, 35));
 
         jLabel11.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Dirección");
         jPanel17.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 148, 125, 35));
 
@@ -651,6 +700,8 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
 
+        PaginadorCliente.setBackground(new java.awt.Color(44, 44, 44));
+
         javax.swing.GroupLayout PaginadorClienteLayout = new javax.swing.GroupLayout(PaginadorCliente);
         PaginadorCliente.setLayout(PaginadorClienteLayout);
         PaginadorClienteLayout.setHorizontalGroup(
@@ -669,32 +720,42 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(140, 132, 152));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Proveedor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+        jPanel18.setBackground(new java.awt.Color(44, 44, 44));
+        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Proveedor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnNuevoProveedor.setBackground(new java.awt.Color(44, 44, 44));
         btnNuevoProveedor.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNuevoProveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevoProveedor.setText("Nuevo");
         jPanel18.add(btnNuevoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 120, 40));
 
+        btnRegistrarProveedor.setBackground(new java.awt.Color(44, 44, 44));
         btnRegistrarProveedor.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegistrarProveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarProveedor.setText("Registrar");
         jPanel18.add(btnRegistrarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 120, 40));
 
+        btnModificarProveedor.setBackground(new java.awt.Color(44, 44, 44));
         btnModificarProveedor.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarProveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnModificarProveedor.setText("Modificar");
         jPanel18.add(btnModificarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, 40));
 
         jLabel12.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nombre");
         jPanel18.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 91, 125, 35));
         jPanel18.add(txtNombreProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 92, 125, 35));
         jPanel18.add(txtTelefonoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 146, 125, 35));
 
         jLabel13.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Teléfono");
         jPanel18.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 145, 125, 35));
 
         jLabel14.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Dirección");
         jPanel18.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 199, 125, 35));
 
@@ -703,6 +764,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel18.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 199, 125, 115));
 
         jLabel15.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("RUC");
         jPanel18.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 37, 125, 35));
         jPanel18.add(txtRucProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 38, 125, 35));
@@ -725,6 +787,8 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
 
+        PaginadorProveedor.setBackground(new java.awt.Color(44, 44, 44));
+
         javax.swing.GroupLayout PaginadorProveedorLayout = new javax.swing.GroupLayout(PaginadorProveedor);
         PaginadorProveedor.setLayout(PaginadorProveedorLayout);
         PaginadorProveedorLayout.setHorizontalGroup(
@@ -743,6 +807,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(140, 132, 152));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PaginadorUser.setBackground(new java.awt.Color(44, 44, 44));
+
         javax.swing.GroupLayout PaginadorUserLayout = new javax.swing.GroupLayout(PaginadorUser);
         PaginadorUser.setLayout(PaginadorUserLayout);
         PaginadorUserLayout.setHorizontalGroup(
@@ -756,22 +822,30 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jPanel7.add(PaginadorUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 490, 770, 50));
 
-        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+        jPanel19.setBackground(new java.awt.Color(44, 44, 44));
+        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nuevo Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnNuevoUser.setBackground(new java.awt.Color(44, 44, 44));
         btnNuevoUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNuevoUser.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevoUser.setText("Nuevo");
         jPanel19.add(btnNuevoUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 120, 40));
 
+        btnRegistrarUser.setBackground(new java.awt.Color(44, 44, 44));
         btnRegistrarUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegistrarUser.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarUser.setText("Registrar");
         jPanel19.add(btnRegistrarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 120, 40));
 
+        btnModificarUser.setBackground(new java.awt.Color(44, 44, 44));
         btnModificarUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarUser.setForeground(new java.awt.Color(255, 255, 255));
         btnModificarUser.setText("Modificar");
         jPanel19.add(btnModificarUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, 40));
 
         jLabel16.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Nombre");
         jPanel19.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 91, 125, 35));
 
@@ -779,14 +853,17 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel19.add(txtNombreUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 92, 125, 35));
 
         jLabel17.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Contraseña");
         jPanel19.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 145, 125, 35));
 
         jLabel18.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Caja");
         jPanel19.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 198, 125, 35));
 
         jLabel19.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Usuario");
         jPanel19.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 37, 125, 35));
 
@@ -794,6 +871,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel19.add(txtUsuarioUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 38, 125, 35));
 
         jLabel20.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Rol");
         jPanel19.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 252, 125, 35));
 
@@ -807,9 +885,12 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         txtClaveUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jPanel19.add(txtClaveUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 145, 125, 35));
+        jPanel19.add(txtIdUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 50, 40));
 
         jPanel7.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 280, 510));
 
+        TableUser.setBackground(new java.awt.Color(44, 44, 44));
+        TableUser.setForeground(new java.awt.Color(255, 255, 255));
         TableUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -818,6 +899,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 "ID", "Usuario", "Nombre", "Rol", "Caja", "Estado"
             }
         ));
+        TableUser.setComponentPopupMenu(jPopupUsuarios);
         jScrollPane7.setViewportView(TableUser);
         if (TableUser.getColumnModel().getColumnCount() > 0) {
             TableUser.getColumnModel().getColumn(1).setHeaderValue("Usuario");
@@ -832,22 +914,30 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(140, 132, 152));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel20.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nueva Categoría", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+        jPanel20.setBackground(new java.awt.Color(44, 44, 44));
+        jPanel20.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nueva Categoría", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnNuevoCategoria.setBackground(new java.awt.Color(44, 44, 44));
         btnNuevoCategoria.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNuevoCategoria.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevoCategoria.setText("Nuevo");
         jPanel20.add(btnNuevoCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 120, 40));
 
+        btnRegistrarCategoria.setBackground(new java.awt.Color(44, 44, 44));
         btnRegistrarCategoria.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegistrarCategoria.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarCategoria.setText("Registrar");
         jPanel20.add(btnRegistrarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 120, 40));
 
+        btnModificarCategoria.setBackground(new java.awt.Color(44, 44, 44));
         btnModificarCategoria.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarCategoria.setForeground(new java.awt.Color(255, 255, 255));
         btnModificarCategoria.setText("Modificar");
         jPanel20.add(btnModificarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, 40));
 
         jLabel24.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Nombre");
         jPanel20.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 37, 125, 35));
         jPanel20.add(txtNombreCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 38, 125, 35));
@@ -865,6 +955,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         jScrollPane8.setViewportView(TableCategoria);
 
         jPanel8.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
+
+        PaginadorCategoria.setBackground(new java.awt.Color(44, 44, 44));
 
         javax.swing.GroupLayout PaginadorCategoriaLayout = new javax.swing.GroupLayout(PaginadorCategoria);
         PaginadorCategoria.setLayout(PaginadorCategoriaLayout);
@@ -884,27 +976,36 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(140, 132, 152));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel21.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nueva Medida", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+        jPanel21.setBackground(new java.awt.Color(44, 44, 44));
+        jPanel21.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Nueva Medida", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnNuevoMedida.setBackground(new java.awt.Color(44, 44, 44));
         btnNuevoMedida.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnNuevoMedida.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevoMedida.setText("Nuevo");
         jPanel21.add(btnNuevoMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 120, 40));
 
+        btnRegistrarMedida.setBackground(new java.awt.Color(44, 44, 44));
         btnRegistrarMedida.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegistrarMedida.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarMedida.setText("Registrar");
         jPanel21.add(btnRegistrarMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 120, 40));
 
+        btnModificarMedida.setBackground(new java.awt.Color(44, 44, 44));
         btnModificarMedida.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarMedida.setForeground(new java.awt.Color(255, 255, 255));
         btnModificarMedida.setText("Modificar");
         jPanel21.add(btnModificarMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, 40));
 
         jLabel25.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("Nombre");
         jPanel21.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 37, 125, 35));
         jPanel21.add(txtNombreMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 38, 125, 35));
 
         jLabel26.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Nombre Corto");
         jPanel21.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 91, 125, 35));
         jPanel21.add(txtNombreCortoMedida, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 92, 125, 35));
@@ -922,6 +1023,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         jScrollPane9.setViewportView(TableMedida);
 
         jPanel9.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
+
+        PaginadorMedida.setBackground(new java.awt.Color(44, 44, 44));
 
         javax.swing.GroupLayout PaginadorMedidaLayout = new javax.swing.GroupLayout(PaginadorMedida);
         PaginadorMedida.setLayout(PaginadorMedidaLayout);
@@ -964,14 +1067,34 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("Total");
         jPanel10.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 70, -1));
+
+        txtCodigoNV.setBackground(new java.awt.Color(44, 44, 44));
+        txtCodigoNV.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(txtCodigoNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 130, -1));
+
+        txtProductoNV.setBackground(new java.awt.Color(44, 44, 44));
+        txtProductoNV.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(txtProductoNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 200, -1));
+
+        txtTotalNV.setBackground(new java.awt.Color(44, 44, 44));
+        txtTotalNV.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(txtTotalNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 50, 70, -1));
+
+        txtStockNV.setBackground(new java.awt.Color(44, 44, 44));
+        txtStockNV.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(txtStockNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 50, 50, -1));
+
+        txtPrecioNV.setBackground(new java.awt.Color(44, 44, 44));
+        txtPrecioNV.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(txtPrecioNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 70, -1));
+
+        txtCantidadNV.setBackground(new java.awt.Color(44, 44, 44));
+        txtCantidadNV.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(txtCantidadNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 50, -1));
 
+        btnGenerarNV.setBackground(new java.awt.Color(44, 44, 44));
         btnGenerarNV.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnGenerarNV.setForeground(new java.awt.Color(255, 255, 255));
         btnGenerarNV.setText("Generar");
         jPanel10.add(btnGenerarNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, -1, -1));
 
@@ -1005,8 +1128,16 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel30.setText("Cliente");
         jPanel10.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 60, 30));
 
+        jComboBox1.setBackground(new java.awt.Color(44, 44, 44));
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 260, 30));
+
+        jTextField1.setBackground(new java.awt.Color(44, 44, 44));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 90, 30));
+
+        jTextField2.setBackground(new java.awt.Color(44, 44, 44));
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel10.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 470, 90, 30));
 
         jLabel31.setBackground(new java.awt.Color(44, 44, 44));
@@ -1048,6 +1179,8 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jPanel11.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 1060, -1));
 
+        PaginadorVentas.setBackground(new java.awt.Color(44, 44, 44));
+
         javax.swing.GroupLayout PaginadorVentasLayout = new javax.swing.GroupLayout(PaginadorVentas);
         PaginadorVentas.setLayout(PaginadorVentasLayout);
         PaginadorVentasLayout.setHorizontalGroup(
@@ -1078,6 +1211,8 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jPanel12.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 1060, -1));
 
+        PaginadorCompras.setBackground(new java.awt.Color(44, 44, 44));
+
         javax.swing.GroupLayout PaginadorComprasLayout = new javax.swing.GroupLayout(PaginadorCompras);
         PaginadorCompras.setLayout(PaginadorComprasLayout);
         PaginadorComprasLayout.setHorizontalGroup(
@@ -1096,89 +1231,59 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(140, 132, 152));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel22.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Datos de la Empresa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
+        jPanel22.setBackground(new java.awt.Color(44, 44, 44));
+        jPanel22.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Datos de la Empresa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnModificarEmpresa.setBackground(new java.awt.Color(44, 44, 44));
         btnModificarEmpresa.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnModificarEmpresa.setForeground(new java.awt.Color(255, 255, 255));
         btnModificarEmpresa.setText("Modificar");
+        jPanel22.add(btnModificarEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 411, 258, 40));
 
         jLabel37.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText("Nombre");
+        jPanel22.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 91, 125, 35));
+        jPanel22.add(txtNombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 92, 125, 35));
+        jPanel22.add(txtTelefonoEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 146, 125, 35));
 
         jLabel44.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
         jLabel44.setText("Teléfono");
+        jPanel22.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 145, 125, 35));
 
         jLabel45.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
         jLabel45.setText("Dirección");
+        jPanel22.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 199, 125, 35));
 
         jScrollPane13.setViewportView(txtDireccionEmpresa);
 
+        jPanel22.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 199, 125, 76));
+
         jLabel46.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
         jLabel46.setText("RUC");
+        jPanel22.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 37, 125, 35));
+        jPanel22.add(txtRucEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 38, 125, 35));
 
         jLabel47.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
         jLabel47.setText("Mensaje");
+        jPanel22.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 293, 125, 35));
 
         jScrollPane14.setViewportView(txtMensajeEmpresa);
 
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addComponent(txtNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane13)
-                            .addComponent(txtTelefonoEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                        .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtRucEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane14))
-                    .addComponent(btnModificarEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRucEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTelefonoEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(btnModificarEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-        );
+        jPanel22.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 293, 127, 62));
 
         jPanel13.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 280, 470));
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Logo.png"))); // NOI18N
+        jPanel13.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 330, 240));
 
         jTabbedPane1.addTab("tab10", jPanel13);
 
@@ -1223,13 +1328,30 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("Total");
         jPanel16.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 70, -1));
+
+        txtCodigoNC.setBackground(new java.awt.Color(44, 44, 44));
+        txtCodigoNC.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.add(txtCodigoNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 130, -1));
+
+        txtProductoNC.setBackground(new java.awt.Color(44, 44, 44));
+        txtProductoNC.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.add(txtProductoNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 200, -1));
+
+        txtTotalNC.setBackground(new java.awt.Color(44, 44, 44));
+        txtTotalNC.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.add(txtTotalNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 50, 70, -1));
+
+        txtPrecioNC.setBackground(new java.awt.Color(44, 44, 44));
+        txtPrecioNC.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.add(txtPrecioNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 70, -1));
+
+        txtCantidadNC.setBackground(new java.awt.Color(44, 44, 44));
+        txtCantidadNC.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.add(txtCantidadNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 50, -1));
 
+        btnGenerarNC.setBackground(new java.awt.Color(44, 44, 44));
         btnGenerarNC.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnGenerarNC.setForeground(new java.awt.Color(255, 255, 255));
         btnGenerarNC.setText("Generar");
         jPanel16.add(btnGenerarNC, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, -1, -1));
 
@@ -1257,8 +1379,16 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel40.setText("Proveedor");
         jPanel16.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 80, 30));
 
+        jComboBox2.setBackground(new java.awt.Color(44, 44, 44));
+        jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 260, 30));
+
+        jTextField3.setBackground(new java.awt.Color(44, 44, 44));
+        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 90, 30));
+
+        jTextField4.setBackground(new java.awt.Color(44, 44, 44));
+        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel16.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 470, 90, 30));
 
         jLabel41.setBackground(new java.awt.Color(44, 44, 44));
@@ -1362,7 +1492,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JTable TableNV;
     private javax.swing.JTable TableProductos;
     private javax.swing.JTable TableProveedor;
-    private javax.swing.JTable TableUser;
+    public javax.swing.JTable TableUser;
     private javax.swing.JTable TableVentas;
     private javax.swing.JButton btnGenerarNC;
     private javax.swing.JButton btnGenerarNV;
@@ -1436,11 +1566,14 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuItem jMenuEliminarUser;
+    private javax.swing.JMenuItem jMenuReingresarUser;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1463,6 +1596,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPopupMenu jPopupUsuarios;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -1493,6 +1627,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JTextPane txtDireccionCliente;
     private javax.swing.JTextPane txtDireccionEmpresa;
     private javax.swing.JTextPane txtDireccionProveedor;
+    public javax.swing.JTextField txtIdUser;
     private javax.swing.JTextPane txtMensajeEmpresa;
     private javax.swing.JTextField txtNombreCategoria;
     private javax.swing.JTextField txtNombreCliente;

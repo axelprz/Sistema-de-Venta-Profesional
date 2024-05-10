@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class UsuariosDAO {
@@ -54,5 +56,28 @@ public class UsuariosDAO {
             JOptionPane.showMessageDialog(null, e.toString());
             return false;
         }
+    }
+
+    public List ListaUsuarios(){
+        List<Usuarios> listaUsers = new ArrayList();
+        String sql = "SELECT * FROM usuarios";
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Usuarios us = new Usuarios();
+                us.setId(rs.getInt("id"));
+                us.setUsuario(rs.getString("usuario"));
+                us.setNombre(rs.getString("nombre"));
+                us.setCaja(rs.getString("caja"));
+                us.setRol(rs.getString("rol"));
+                us.setEstado(rs.getString("estado"));
+                listaUsers.add(us);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return listaUsers;
     }
 }
