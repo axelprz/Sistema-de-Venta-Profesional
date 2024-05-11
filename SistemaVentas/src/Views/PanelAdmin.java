@@ -1,26 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Views;
 
 import controllers.ConfigControllers;
 import controllers.UsuariosController;
+import controllers.ClientesController;
+import models.Clientes;
+import models.ClientesDAO;
 import models.Usuarios;
 import models.UsuariosDAO;
 
-/**
- *
- * @author axelp
- */
 public class PanelAdmin extends javax.swing.JFrame {
     Usuarios us = new Usuarios();
     UsuariosDAO usDao = new UsuariosDAO();
+    Clientes cl = new Clientes();
+    ClientesDAO clDao = new ClientesDAO();
     
     public PanelAdmin() {
         initComponents();
         ConfigControllers config = new ConfigControllers(this);
         UsuariosController users = new UsuariosController(us, usDao, this);
+        ClientesController cliente = new ClientesController(cl, clDao, this);
     }
 
     /**
@@ -693,10 +692,6 @@ public class PanelAdmin extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(TableClientes);
-        if (TableClientes.getColumnModel().getColumnCount() > 0) {
-            TableClientes.getColumnModel().getColumn(1).setHeaderValue("Usuario");
-            TableClientes.getColumnModel().getColumn(3).setHeaderValue("Rol");
-        }
 
         jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 770, -1));
 
@@ -1477,7 +1472,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     public javax.swing.JPanel JPanelProveedor;
     public javax.swing.JPanel JPanelUsuarios;
     private javax.swing.JPanel PaginadorCategoria;
-    private javax.swing.JPanel PaginadorCliente;
+    public javax.swing.JPanel PaginadorCliente;
     private javax.swing.JPanel PaginadorCompras;
     private javax.swing.JPanel PaginadorMedida;
     private javax.swing.JPanel PaginadorProducto;
@@ -1485,7 +1480,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel PaginadorUser;
     private javax.swing.JPanel PaginadorVentas;
     private javax.swing.JTable TableCategoria;
-    private javax.swing.JTable TableClientes;
+    public javax.swing.JTable TableClientes;
     private javax.swing.JTable TableCompras;
     private javax.swing.JTable TableMedida;
     private javax.swing.JTable TableNC;
@@ -1497,20 +1492,20 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerarNC;
     private javax.swing.JButton btnGenerarNV;
     private javax.swing.JButton btnModificarCategoria;
-    private javax.swing.JButton btnModificarCliente;
+    public javax.swing.JButton btnModificarCliente;
     private javax.swing.JButton btnModificarEmpresa;
     private javax.swing.JButton btnModificarMedida;
     private javax.swing.JButton btnModificarProducto;
     private javax.swing.JButton btnModificarProveedor;
     public javax.swing.JButton btnModificarUser;
     private javax.swing.JButton btnNuevoCategoria;
-    private javax.swing.JButton btnNuevoCliente;
+    public javax.swing.JButton btnNuevoCliente;
     private javax.swing.JButton btnNuevoMedida;
     private javax.swing.JButton btnNuevoProducto;
     private javax.swing.JButton btnNuevoProveedor;
     public javax.swing.JButton btnNuevoUser;
     private javax.swing.JButton btnRegistrarCategoria;
-    private javax.swing.JButton btnRegistrarCliente;
+    public javax.swing.JButton btnRegistrarCliente;
     private javax.swing.JButton btnRegistrarMedida;
     private javax.swing.JButton btnRegistrarProducto;
     private javax.swing.JButton btnRegistrarProveedor;
@@ -1624,13 +1619,13 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigoNV;
     private javax.swing.JTextField txtCodigoProducto;
     private javax.swing.JTextField txtDescripcionProducto;
-    private javax.swing.JTextPane txtDireccionCliente;
+    public javax.swing.JTextPane txtDireccionCliente;
     private javax.swing.JTextPane txtDireccionEmpresa;
     private javax.swing.JTextPane txtDireccionProveedor;
     public javax.swing.JTextField txtIdUser;
     private javax.swing.JTextPane txtMensajeEmpresa;
     private javax.swing.JTextField txtNombreCategoria;
-    private javax.swing.JTextField txtNombreCliente;
+    public javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextField txtNombreCortoMedida;
     private javax.swing.JTextField txtNombreEmpresa;
     private javax.swing.JTextField txtNombreMedida;
@@ -1645,7 +1640,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtRucEmpresa;
     private javax.swing.JTextField txtRucProveedor;
     private javax.swing.JTextField txtStockNV;
-    private javax.swing.JTextField txtTelefonoCliente;
+    public javax.swing.JTextField txtTelefonoCliente;
     private javax.swing.JTextField txtTelefonoEmpresa;
     private javax.swing.JTextField txtTelefonoProveedor;
     private javax.swing.JTextField txtTotalNC;

@@ -26,6 +26,7 @@ public class UsuariosController implements ActionListener, MouseListener{
         this.views = views;
         this.views.btnRegistrarUser.addActionListener(this);
         this.views.btnModificarUser.addActionListener(this);
+        this.views.btnNuevoUser.addActionListener(this);
         this.views.jMenuEliminarUser.addActionListener(this);
         this.views.jMenuReingresarUser.addActionListener(this);
         this.views.TableUser.addMouseListener(this);
@@ -50,6 +51,7 @@ public class UsuariosController implements ActionListener, MouseListener{
                 if(usDao.registrar(us)){
                     limpiarTable();
                     listarUsuarios();
+                    limpiar();
                     JOptionPane.showMessageDialog(null, "Usuario registrado con éxito");
                 }else{
                     JOptionPane.showMessageDialog(null, "Error al registrar el usuario");
@@ -68,6 +70,7 @@ public class UsuariosController implements ActionListener, MouseListener{
                 if(usDao.modificar(us)){
                     limpiarTable();
                     listarUsuarios();
+                    limpiar();
                     JOptionPane.showMessageDialog(null, "Usuario modificado con éxito");
                 }else{
                     JOptionPane.showMessageDialog(null, "Error al modificar el usuario");
@@ -81,6 +84,7 @@ public class UsuariosController implements ActionListener, MouseListener{
                 if(usDao.accion("Inactivo", id)){
                     limpiarTable();
                     listarUsuarios();
+                    limpiar();
                     JOptionPane.showMessageDialog(null, "Usuario eliminado");
                 }else{
                    JOptionPane.showMessageDialog(null, "Error al eliminar usuario"); 
@@ -94,11 +98,14 @@ public class UsuariosController implements ActionListener, MouseListener{
                 if(usDao.accion("Activo", id)){
                     limpiarTable();
                     listarUsuarios();
+                    limpiar();
                     JOptionPane.showMessageDialog(null, "Usuario reingresado");
                 }else{
                    JOptionPane.showMessageDialog(null, "Error al reingresar usuario"); 
                 }
             }
+        }else{
+            limpiar();
         }
     }
     public void listarUsuarios(){
@@ -156,5 +163,12 @@ public class UsuariosController implements ActionListener, MouseListener{
     @Override
     public void mouseExited(MouseEvent e) {
     
+    }
+    
+    private void limpiar(){
+        views.txtIdUser.setText("");
+        views.txtUsuarioUser.setText("");
+        views.txtNombreUser.setText("");
+        views.txtClaveUser.setText("");
     }
 }
